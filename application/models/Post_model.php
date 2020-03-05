@@ -63,5 +63,17 @@ class Post_model extends CI_Model{
         return $query->result_array();
 
     }
+    public function Like_post($data){
+        $query->this->db->insert('posts','$data');
+        if ($query){
+            echo "1";
+        }
+        else
+            echo "0";
+    }
+    public function count_post_like($id){
+        $query=$this->db->select('*')->from('posts')->where('id',$id)->get()->result();
+        return $query;
+    }
 
 }

@@ -8,6 +8,7 @@
 </div>
 <div>
 <img style="height:250px; width:250px;" src="<?php echo site_url();?>assets/images/posts/<?php echo $post['post_image'];?>">
+
 </div>
 <?php if($this->session->userdata('user_id')==$post['user_id']): ?>
 <?php echo form_open('index.php/posts/delete/'.$post['id']);?>

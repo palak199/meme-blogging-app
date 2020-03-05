@@ -9,6 +9,8 @@
             $this->load->view('templates/footer');
             
         }
+        
+
 
         public function view($slug=NULL){
             $data['post']=$this->post_model->get_posts($slug);
@@ -99,6 +101,11 @@
         $this->post_model->update_post();
         $this->session->set_flashdata('post_updated','post has been updated');
         redirect('index.php/posts');
+    }
+    public function like_post(){
+        $id=$this->input()->post('id');
+        $data=array('id'=>$id);
+        $this->post_model->Like_post($data);
     }
 
 }
