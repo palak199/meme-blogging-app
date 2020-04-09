@@ -1,20 +1,13 @@
-function like(id){
-  $.ajax({
-    
-      type:"post",
-      //url:"<?php echo base_url('Posts.php/like_post')?>",
-      //url:"/like_post",
-      data:"{id:id}",
-      success:function(val){
-        if(val==1){
-        $("#like_count").html(val);
-      }
-      else {
-        alert("err");
-      }
+function like(e){
+    $.ajax({
+        type: "POST",
+        url: "<?php echo site_url('Posts/addlike');?>",
+        data: "Storyid="+storyid,
+        success: function (response) {
+         $("#like_"+storyid).html(response+" Likes");
+          
+        }
+    });
 
-
-      }
-    
-  });
 }
+

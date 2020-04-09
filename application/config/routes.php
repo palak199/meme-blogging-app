@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['posts']='posts/index';
 $route['posts/create']='posts/create';
 $route['posts/update']='posts/update';
-//$route['posts/like_post']='posts/like_post';
+$route['posts/like']='posts/like';
 $route['posts/(:any)']='posts/view/$1';
 $route['categories/create']='categories/create';
 $route['categories']='categories/index';

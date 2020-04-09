@@ -17,6 +17,7 @@
 <a class="btn btn-default" href="<?php echo base_url();?>index.php/posts/edit/<?php echo $post['slug'];?>">Edit</a>
 <?php endif;?>
 <hr>
+
 <h3>comments</h3>
 <?php if($comments): ?>
 <?php foreach($comments as $comment): ?>

@@ -1,17 +1,15 @@
 <?php 
     class Posts extends CI_Controller{
         public function index(){
-            
             $data['title']='Latest posts';
             $data['posts']=$this->post_model->get_posts();
+            //$data['ratings']=$this->post_model->get_likes();
             $this->load->view('templates/header');
             $this->load->view('posts/index',$data);
             $this->load->view('templates/footer');
             
         }
         
-
-
         public function view($slug=NULL){
             $data['post']=$this->post_model->get_posts($slug);
             $post_id=$data['post']['id'];
@@ -59,8 +57,7 @@
             }
             $this->post_model->create_post($post_image);
             $this->session->set_flashdata('post_created','post created');
-        
-
+    
 
             redirect('index.php/posts');
         }
@@ -102,11 +99,16 @@
         $this->session->set_flashdata('post_updated','post has been updated');
         redirect('index.php/posts');
     }
-    public function like_post(){
-        $id=$this->input()->post('id');
-        $data=array('id'=>$id);
-        $this->post_model->Like_post($data);
-    }
+    
+  public function like(){
+
+    $t=$this->rating_model->add_like();
+    echo $t;
+    
+    
+  }
 
 }
-    ?>
+
+  
+

@@ -1,6 +1,7 @@
 <html>
 <head>
 <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/home.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 <title>
 memestation

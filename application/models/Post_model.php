@@ -9,7 +9,7 @@ class Post_model extends CI_Model{
     public function get_posts($slug=FALSE){
         if($slug===FALSE){
             $this->db->order_by('posts.id','DESC');
-            $this->db->join('categories','categories.id=posts.category_id');
+            $this->db->join('categories','categories.c_id=posts.category_id');
             $query=$this->db->get('posts');
             return $query->result_array();
 
@@ -56,24 +56,17 @@ class Post_model extends CI_Model{
         $query=$this->db->get('categories');
         return $query->result_array();
     }
+    
     public function get_posts_by_category($category_id){
         $this->db->order_by('posts.title');
-        $this->db->join('categories','categories.id=posts.category_id');
+        $this->db->join('categories','categories.c_id=posts.category_id');
         $query=$this->db->get_where('posts', array('category_id'=>$category_id));
         return $query->result_array();
 
     }
-    public function Like_post($data){
-        $query->this->db->insert('posts','$data');
-        if ($query){
-            echo "1";
-        }
-        else
-            echo "0";
-    }
-    public function count_post_like($id){
-        $query=$this->db->select('*')->from('posts')->where('id',$id)->get()->result();
-        return $query;
-    }
+    
+
+
+
 
 }
