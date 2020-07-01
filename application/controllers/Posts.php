@@ -1,7 +1,7 @@
 <?php 
     class Posts extends CI_Controller{
         public function index(){
-            $data['title']='Latest posts';
+            
             $data['posts']=$this->post_model->get_posts();
             //$data['ratings']=$this->post_model->get_likes();
             $this->load->view('templates/header');

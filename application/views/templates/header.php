@@ -40,10 +40,10 @@ memestation
     <?php endif;?>
     <?php if($this->session->userdata('logged_in')):?>
     <li>
-    <a class="nav-link" href="<?php echo base_url(); ?>index.php/posts/create">create post</a>
+    <a class="nav-link" href="<?php echo base_url(); ?>index.php/posts/create">generate meme</a>
     </li>
     <li>
-    <a class="nav-link" href="<?php echo base_url(); ?>index.php/categories/create">create category</a>
+    <a class="nav-link" href="<?php echo base_url(); ?>index.php/categories/create">generate hashtag</a>
     </li>
     <li>
     <a class="nav-link" href="<?php echo base_url(); ?>index.php/users/logout">logout</a>
@@ -68,15 +68,15 @@ memestation
 <?php endif ?>
 
 <?php if($this->session->flashdata('post_deleted')):?>
-<?php echo '<p class="alert">'.$this->session->flashdata('post_deleted').'</p>';?>
+<?php echo '<p class="alert alert-danger">'.$this->session->flashdata('post_deleted').'</p>';?>
 <?php endif ?>
 
 <?php if($this->session->flashdata('post_updated')):?>
-<?php echo '<p class="alert">'.$this->session->flashdata('post_updated').'</p>';?>
+<?php echo '<p class="alert alert-success">'.$this->session->flashdata('post_updated').'</p>';?>
 <?php endif ?>
 
 <?php if($this->session->flashdata('category_created')):?>
-<?php echo '<p class="alert">'.$this->session->flashdata('category_created').'</p>';?>
+<?php echo '<p class="alert alert-success">'.$this->session->flashdata('category_created').'</p>';?>
 <?php endif ?>
 
 <?php if($this->session->flashdata('login_failed')):?>

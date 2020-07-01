@@ -1,8 +1,7 @@
 <?php
 /* this is view of specific post and for its owner, there is an option of editing and deleting as well*/
 ?>
-<h2>
-<?php echo $post['title'];?></h2>
+
 <div>
 <?php echo $post['body'];?>
 </div>
